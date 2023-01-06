@@ -1,0 +1,21 @@
+name: infoym
+recipe: laravel
+config:
+  webroot: public
+  php: '8.1'
+  via: nginx
+  database: mysql
+  xdebug: true
+  cache: redis
+
+services:
+  myservice:
+    type: phpmyadmin
+    hosts:
+      - database
+  node:
+    type: node:16
+
+tooling:
+  npm:
+    service: node
